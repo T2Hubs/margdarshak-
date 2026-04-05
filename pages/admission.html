@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admission Form — Margdarshak Career Institute</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .admission-hero { padding:130px 24px 60px; background:linear-gradient(135deg,#0a2463,#1d4ed8); color:#fff; text-align:center; }
+    .admission-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(32px,5vw,52px); margin-bottom:14px; }
+    .admission-hero p  { font-size:17px; opacity:.85; }
+    .admission-body { padding:60px 24px; max-width:720px; margin:0 auto; }
+    .form-card { background:#fff; border-radius:20px; padding:40px; box-shadow:0 12px 48px rgba(10,36,99,.12); border:1px solid #e2e8f0; }
+    .form-card h2 { font-family:'Playfair Display',serif; font-size:24px; color:#0a2463; margin-bottom:24px; }
+    .form-section-title { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#3b82f6; margin:24px 0 12px; border-bottom:2px solid #eff6ff; padding-bottom:6px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .success-box { background:#dcfce7; border:1px solid #bbf7d0; border-radius:12px; padding:32px; text-align:center; display:none; }
+    .success-box i { font-size:52px; color:#22c55e; margin-bottom:14px; display:block; }
+    .success-box h3 { font-size:22px; color:#166534; margin-bottom:8px; }
+    .success-box p  { color:#166534; font-size:15px; }
+    @media(max-width:600px){ .form-row{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<nav class="navbar scrolled">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-icon">
+        <img src="../images/margdarshaklogo.png" alt="logo">
+      </div>
+      <div class="logo-text"><span class="logo-main">Margdarshak</span><span class="logo-sub">Career Institute</span></div>
+    </a>
+    <a href="../index.html" class="btn btn-outline" style="font-size:14px;padding:8px 18px"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  </div>
+</nav>
+
+<div class="admission-hero">
+  <h1>Admission Form 2025–26</h1>
+  <p>Take the first step towards your dream career — fill in the form below!</p>
+</div>
+
+<div class="admission-body">
+  <div class="form-card">
+    <h2>📋 Admission Application</h2>
+
+    <div id="successBox" class="success-box">
+      <i class="fas fa-check-circle"></i>
+      <h3>Application Submitted!</h3>
+      <p>Our team will contact you within 24 hours. Thank you for choosing Margdarshak!</p>
+    </div>
+
+    <form id="admissionForm">
+      <div class="form-section-title">Personal Information</div>
+      <div class="form-row">
+        <div class="form-group"><input type="text" placeholder="Student's Full Name *" required/></div>
+        <div class="form-group"><input type="date" required/></div>
+        <div class="form-group"><input type="text" placeholder="Father's Name *" required/></div>
+        <div class="form-group"><input type="tel" placeholder="Mobile Number *" required/></div>
+        <div class="form-group"><input type="email" placeholder="Email Address (optional)"/></div>
+        <div class="form-group">
+          <select required>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><input type="text" placeholder="Full Address *" required/></div>
+
+      <div class="form-section-title">Course Selection</div>
+      <div class="form-row">
+        <div class="form-group">
+          <select required>
+            <option value="">Select Course *</option>
+            <option>NEET Preparation</option>
+            <option>JEE Preparation</option>
+            <option>Class 10th Board</option>
+            <option>Class 12th Board</option>
+            <option>Foundation Course</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select>
+            <option value="">Batch Preference</option>
+            <option>Morning (7–10 AM)</option>
+            <option>Afternoon (12–3 PM)</option>
+            <option>Evening (5–8 PM)</option>
+            <option>Weekend Batch</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select>
+            <option value="">Last Qualification</option>
+            <option>Class 8th Pass</option>
+            <option>Class 9th Pass</option>
+            <option>Class 10th Pass</option>
+            <option>Class 11th Pass</option>
+            <option>Class 12th Pass</option>
+          </select>
+        </div>
+        <div class="form-group"><input type="text" placeholder="Previous Result % (e.g. 85%)"/></div>
+      </div>
+
+      <div class="form-section-title">Additional Information</div>
+      <div class="form-group"><textarea rows="3" placeholder="Any questions or additional details..."></textarea></div>
+
+      <button type="submit" class="btn btn-primary full-width" style="justify-content:center;padding:16px;font-size:16px;margin-top:8px">
+        <i class="fas fa-paper-plane"></i> Submit Application
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.getElementById('admissionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
